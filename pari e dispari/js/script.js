@@ -9,7 +9,7 @@ console.log(`Hai scelto l'opzione ${userChoice}`);
 let userNumber;
 do {
     userNumber = parseInt(prompt("Scegli un numero da 1 a 5"))
-} while (userNumber < 1 || userNumber > 5);
+} while (isNaN(userNumber) || (userNumber < 1 || userNumber > 5));
 
 console.log(`Hai scelto il numero ${userNumber}`);
 // Creo una funzione che mi genera un numero random da 1 a 5 per il computer
@@ -33,9 +33,10 @@ function isOddOrEven(number) {
         return "dispari"
     }
 }
-
+// Utilizziamo la funzione per vedere se il risultato è pari o dispari
 let result = isOddOrEven(sum)
 console.log(result);
+
 // Dichiaro chi ha vinto
 if (result === userChoice) {
     console.log(`Hai vinto!`);
